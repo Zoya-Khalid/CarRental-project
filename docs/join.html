@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="join.css">
+</head>
+<body>
+    <div class="background">
+        <div class="stars"></div>
+    
+        <div class="toggle-container">
+          <span id="loginLabel">Log In</span>
+          <label class="switch">
+            <input type="checkbox" id="toggleForm">
+            <span class="slider round"></span>
+          </label>
+          <span id="signupLabel">Sign Up</span>
+        </div>
+    
+        <div class="form-container">
+          <form id="authForm">
+            <h2 id="formTitle">Log In</h2>
+    
+            <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Your Email" required />
+            </div>
+    
+            <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Your Password" required />
+            </div>
+    
+            <!-- Sign Up Only Fields -->
+            <div class="input-group signup-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="First Name" />
+            </div>
+    
+            <div class="input-group signup-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Last Name" />
+            </div>
+    
+            <div class="input-group signup-field">
+              <i class="fas fa-phone"></i>
+              <input type="tel" placeholder="Phone Number" />
+            </div>
+    
+            <button type="submit" class="submit-btn">SUBMIT</button>
+            <p class="forgot">Forgot your password?</p>
+          </form>
+        </div>
+    
+        <!-- Car image in bottom right -->
+        <img src="img/car.png" class="car-image" alt="Car" />
+      </div>
+    
+      <script>
+        const toggle = document.getElementById("toggleForm");
+        const title = document.getElementById("formTitle");
+        const signupFields = document.querySelectorAll(".signup-field");
+    
+        toggle.addEventListener("change", () => {
+          if (toggle.checked) {
+            title.textContent = "Sign Up";
+            signupFields.forEach(field => field.style.display = "flex");
+          } else {
+            title.textContent = "Log In";
+            signupFields.forEach(field => field.style.display = "none");
+          }
+        });
+    
+        // Hide Sign Up fields initially
+        signupFields.forEach(field => field.style.display = "none");
+      </script>
+</body>
+</html>
