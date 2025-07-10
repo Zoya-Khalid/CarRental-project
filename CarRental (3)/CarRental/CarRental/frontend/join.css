@@ -1,0 +1,161 @@
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
+        height: 100%;
+        overflow: hidden;
+        background: black;
+    }
+
+    .background {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .stars::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url('https://raw.githubusercontent.com/jonobr1/NeonStars/master/images/stars.png');
+        animation: twinkle 40s linear infinite;
+    }
+
+    @keyframes twinkle {
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: 1000px 1000px;
+        }
+    }
+
+    .form-container {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        width: 300px;
+        z-index: 1;
+    }
+
+    h2 {
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        position: relative;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .input-group i {
+        position: absolute;
+        left: 10px;
+        color: #ccc;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px 10px 10px 35px;
+        background: #222;
+        border: none;
+        color: white;
+        border-radius: 8px;
+
+        /* NEW FONT STYLE */
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+    }
+
+
+    .submit-btn {
+        width: 100%;
+        background: #ffe164;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        color: #000;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .forgot {
+        text-align: center;
+        color: #aaa;
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+
+    .toggle-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 24px;
+    }
+
+    .slider::before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: blue;
+        transition: .4s;
+        border-radius: 50%;
+    }
+
+    input:checked+.slider {
+        background-color: #ffe164;
+    }
+
+    input:checked+.slider::before {
+        transform: translateX(26px);
+    }
+
+    .car-image {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        width: 120px;
+        z-index: 0;
+    }
